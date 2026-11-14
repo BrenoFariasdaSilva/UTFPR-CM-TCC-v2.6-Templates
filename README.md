@@ -43,9 +43,6 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
   - [Setup](#setup)
     - [Clone the repository](#clone-the-repository)
   - [Installation:](#installation)
-  - [Run Programing Language Code:](#run-programing-language-code)
-    - [Dependencies](#dependencies)
-    - [Dataset - Optional](#dataset---optional)
   - [Usage](#usage)
   - [Results - Optional](#results---optional)
   - [How to Cite?](#how-to-cite)
@@ -90,46 +87,24 @@ Download the repository using **Code → Download ZIP** on GitHub and extract it
 
 ## Installation:
 
-* Programing Language:
+1. **For beginners:** open the repository folder and launch the script for your operating system. It presents the four template choices and delegates setup and compilation to the selected project:
 
-  * Manually:
-      ```bash
-      # Programing Language:
-      sudo apt install program-language -y
-      ```
+   - **Windows:** double-click `Start-Here-Windows.cmd`.
+   - **macOS:** open `Start-Here-macOS.command` (you may need to right-click and select **Open**).
+   - **Linux:** execute `Start-Here-Linux.sh` (you may need to allow execution or run it with Bash).
 
-  * Using Makefile:
-      ```bash
-      make install
-      ```
-
-  * Using ShellScript:
-      ```bash
-      chmod +x install.sh
-      sudo ./install.sh
-      ```  
-
-## Run Programing Language Code:
-
-```bash
-# Command here 
-```
-
-### Dependencies
-
-1. Install the project dependencies with the following command:
+2. **Using Makefile:** select the language and compilation method, then check or set up the prerequisites:
 
    ```bash
-   make dependencies
+   # Default: Portuguese, local compilation (without Docker)
+   make doctor
+   make setup
+
+   # Example: English template using Docker
+   make setup TEMPLATE=en MODE=docker
    ```
 
-### Dataset - Optional
-
-1. Download the dataset from [WEBSITE-HERE]() and place it in this project directory `(/UTFPR-CM-TCC-v2.6-Templates)` and run the following command:
-
-   ```bash
-   make dataset
-   ```
+3. Follow any necessary operating-system authorization prompts. Installation attempts are best-effort: they cannot bypass administrator restrictions, software license acceptance, missing internet access, or required restarts. For instructions specific to a variant, read the `README.md` inside its folder.
 
 ## Usage
 

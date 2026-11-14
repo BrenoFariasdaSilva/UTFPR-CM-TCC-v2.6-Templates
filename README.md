@@ -77,6 +77,8 @@ The templates support Windows, macOS, and Linux. This is an independent communit
 
 ## Setup
 
+Download the repository using **Code → Download ZIP** on GitHub and extract it, or clone it with Git. Open the repository directory before running terminal commands.
+
 ### Clone the repository
 
 1. Clone the repository with the following command:

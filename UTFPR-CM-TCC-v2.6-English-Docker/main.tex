@@ -1,0 +1,74 @@
+% UTFPR-CM v2.6 - English-language adaptation (separate from the original template).
+% Compiler: pdfLaTeX | TeX Live: Latest | Main document: main.tex
+% This remains an ABNT/UTFPR-based template; confirm local submission rules.
+\PassOptionsToPackage{pdfa}{hyperref}
+\PassOptionsToPackage{main=english}{babel}
+\documentclass[
+  12pt,a4paper,oneside,openright,
+  sumario=abnt-6027-2012,
+  chapter=TITLE,
+  pretextualoneside,fontetimes,semrecuonosumario,
+  usemakeindex,pardeassinaturas,
+  brazil,english
+]{utfpr}
+\usepackage[a-3b,mathxmp]{pdfx}
+\input{configuracoes}
+\input{variaveis}
+
+% English captions and navigation; enforced even when packages reload babel.
+\AtBeginDocument{%
+  \selectlanguage{english}%
+  \renewcommand{\tablename}{Table}%
+  \renewcommand{\figurename}{Figure}%
+  \renewcommand{\contentsname}{Contents}%
+  \renewcommand{\bibname}{References}%
+  \renewcommand{\refname}{References}%
+  \renewcommand{\appendixname}{Appendix}%
+  \renewcommand{\listtablename}{List of Tables}%
+  \renewcommand{\listfigurename}{List of Figures}%
+}
+\makeindex
+\makenoidxglossaries
+\input{./PreTexto/entradas-siglas}
+\input{./PosTexto/entradas-glossario}
+\makenomenclature
+
+\begin{document}
+\pretextual
+\coverpageone
+\coverpagetwo
+\clearpage
+\setcounter{page}{2}
+\approvalpage
+% Optional front matter: uncomment as needed.
+% \include{./PreTexto/dedicatoria}
+% \include{./PreTexto/agradecimentos}
+% \include{./PreTexto/epigrafe}
+% English abstract is primary.
+\include{./PreTexto/abstract}
+% Optional Portuguese-language resumo: configure Portuguese keywords first.
+% \include{./PreTexto/resumo}
+\incluirlistadefiguras
+\incluirlistadetabelas
+\incluirlistadeacronimos{glossaries}
+\incluirlistadesimbolos{file}
+\incluirsumario
+\textual
+\include{./capitulos/cap-introducao}
+\include{./capitulos/cap-conceitos}
+\include{./capitulos/cap-trabalhos-relacionados}
+\include{./capitulos/cap-proposta}
+\include{./capitulos/cap-metodologia}
+\include{./capitulos/cap-experimentos-resultados}
+\include{./capitulos/cap-conclusoes}
+% The original Portuguese demonstration chapter remains under reference-portuguese/.
+\postextual
+\arquivosdereferencias{main}
+% Optional appendices and annexes (uncomment as needed).
+% \begin{arquivosdeapendices}
+%   \include{./PosTexto/apendicea}
+% \end{arquivosdeapendices}
+% \begin{arquivosdeanexos}
+%   \include{./PosTexto/anexoa}
+% \end{arquivosdeanexos}
+\end{document}

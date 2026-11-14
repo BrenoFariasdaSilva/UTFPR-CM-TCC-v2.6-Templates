@@ -1,0 +1,32 @@
+\chapter{Background}\label{chap:background}
+Introduce the key theoretical concepts relevant to your work.
+
+\section{Tables}
+The table below demonstrates the desired English caption: \autoref{tab:example}.
+\begin{table}[htbp]
+  \centering
+  \caption{Example comparison of two approaches}
+  \label{tab:example}
+  \begin{tabular}{lcc}
+    \toprule
+    Criterion & Approach A & Approach B \\
+    \midrule
+    Simplicity & High & Medium \\
+    Flexibility & Medium & High \\
+    \bottomrule
+  \end{tabular}
+  \fonte{}
+\end{table}
+
+\section{Figures}
+A figure caption uses the English label \textbf{Figure}.
+\begin{figure}[htbp]
+  \centering
+  \fbox{\parbox[c][2.5cm][c]{0.6\textwidth}{\centering Example illustration placeholder}}
+  \caption{Example illustration with an English caption}
+  \label{fig:example}
+  \fonte{}
+\end{figure}
+
+\section{Abbreviations}
+Refer to \gls{pdf} and \gls{utfpr}. The list of abbreviations and acronyms is generated from \texttt{PreTexto/entradas-siglas.tex}.

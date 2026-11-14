@@ -132,7 +132,7 @@ If you use the UTFPR-CM-TCC-v2.6-Templates in your research, please cite it usin
 }
 ```
 
-Additionally, a `main.bib` file is available in the root directory of this repository, in which contains the BibTeX entry for this project.
+To cite the repository in your LaTeX document, copy this entry into your project's `main.bib` (or other bibliography file).
 
 If you find this repository valuable, please don't forget to give it a ⭐ to show your support! Contributions are highly encouraged, whether by creating issues for feedback or submitting pull requests (PRs) to improve the project. For details on how to contribute, please refer to the [Contributing](#contributing) section below.
 

@@ -69,7 +69,11 @@ The templates support Windows, macOS, and Linux. This is an independent communit
 
 ## Requirements
 
-Bullet points of the requirements.
+- **For one-click use:** a Windows, macOS, or Linux computer and permission to run the appropriate starter script. GNU Make is not required for these launchers.
+- **For terminal commands:** GNU Make and Python 3.9 or newer. On Windows, GNU Make is not installed by default; use the Windows launcher if Make is unavailable.
+- **Docker variants:** Docker Desktop or Docker Engine. The scripts detect Docker and offer installation/startup where supported.
+- **Local variants:** a working LaTeX distribution (MiKTeX on Windows, MacTeX on macOS, or TeX Live on Linux), or permission to install it through the provided setup workflow.
+- **For first-time setup:** an internet connection, sufficient disk space (possibly several gigabytes), and any administrator permissions, license confirmations, virtualization support, or restart required by the operating system.
 
 ## Setup
 

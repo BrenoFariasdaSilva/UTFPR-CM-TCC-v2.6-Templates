@@ -44,7 +44,6 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
     - [Clone the repository](#clone-the-repository)
   - [Installation:](#installation)
   - [Usage](#usage)
-  - [Results - Optional](#results---optional)
   - [How to Cite?](#how-to-cite)
   - [Contributing](#contributing)
   - [Collaborators](#collaborators)
@@ -113,10 +112,6 @@ In order to run the project, run the following command:
 ```bash
 make run
 ```
-
-## Results - Optional
-
-Discuss the results obtained in the project.
 
 ## How to Cite?
 

@@ -56,7 +56,16 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
 
 ## Introduction
 
-Detailed project description.
+This repository provides four versions of the **UTFPR Campo Mourão TCC v2.6 LaTeX template**, combining two document languages (Portuguese and English) with two compilation methods (Docker and native LaTeX). Each version is a self-contained project with automated compilation, bibliography and acronym processing, and PDF/log generation.
+
+| Language | Compilation method | Project directory |
+|---|---|---|
+| Portuguese | Docker | `UTFPR-CM-TCC-v2.6-Docker/` |
+| English | Docker | `UTFPR-CM-TCC-v2.6-English-Docker/` |
+| English | Local (without Docker) | `UTFPR-CM-TCC-v2.6-English-Local/` |
+| Portuguese | Local (without Docker) | `UTFPR-CM-TCC-v2.6-Local/` |
+
+The templates support Windows, macOS, and Linux. This is an independent community project, not an official UTFPR distribution. University formatting requirements and final PDF/A conformance must still be verified independently.
 
 ## Requirements
 

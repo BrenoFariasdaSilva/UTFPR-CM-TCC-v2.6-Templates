@@ -107,11 +107,48 @@ Download the repository using **Code → Download ZIP** on GitHub and extract it
 
 ## Usage
 
-In order to run the project, run the following command:
+Compile the default **Portuguese local** template from the repository root:
 
 ```bash
-make run
+make compile
 ```
+
+Select any of the four templates:
+
+```bash
+# Portuguese — Docker
+make compile TEMPLATE=pt MODE=docker
+
+# English — Docker
+make compile TEMPLATE=en MODE=docker
+
+# English — local (without Docker)
+make compile TEMPLATE=en MODE=local
+
+# Portuguese — local (without Docker)
+make compile TEMPLATE=pt MODE=local
+```
+
+Compile another LaTeX project by providing its path and, optionally, its main `.tex` file:
+
+```bash
+make compile TEMPLATE=en MODE=local PROJECT="/absolute/path/to/project" MAIN="main.tex"
+```
+
+Other available commands:
+
+```bash
+make doctor TEMPLATE=pt MODE=local  # Check tools and dependencies
+make setup TEMPLATE=en MODE=docker  # Offer installation and setup
+make clean TEMPLATE=pt MODE=local   # Remove temporary build files
+make strict TEMPLATE=en MODE=local  # Treat compilation warnings as failures
+make test                           # Run tests for all four projects
+make help                           # Display available commands
+```
+
+The generated PDF is `main.pdf` inside the selected template directory. Detailed compilation logs are saved to that project's `build/logs/default/` directory. The build automates pdfLaTeX passes, bibliography processing, and glossary/index generation as required, including **first-use acronym expansion and a list of used acronyms only**.
+
+**Note:** `make` commands require GNU Make and Python. If those are not available, use the platform-specific starter scripts above. Automatic installation may still require user interaction.
 
 ## How to Cite?
 

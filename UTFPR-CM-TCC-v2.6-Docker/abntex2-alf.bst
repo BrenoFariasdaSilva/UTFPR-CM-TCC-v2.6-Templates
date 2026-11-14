@@ -1,5 +1,3 @@
-%% Changed by Luiz Arthur - 27/jun/2022 - In:
-%%
 %% abntex2-alf.bst, v-1.9.7 laurocesar
 %% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/ 
 %%
@@ -108,9 +106,7 @@ FUNCTION {init.state.consts}
 FUNCTION {output.nonnull}
 { 's :=                                     %the argument is written into s
   output.state mid.sentence =
-    %{ ", " * write$ }
-    { " " * write$ }
-    %mid.sentence first write comma
+    { ", " * write$ }                       %mid.sentence first write comma
     { output.state after.block =
         { add.period$ write$ newline$ }
         { output.state before.all = 'write$
@@ -121,24 +117,6 @@ FUNCTION {output.nonnull}
   if$
   s                                         %now comes s
 }
-
-FUNCTION {output.nonnull.comma}
-{ 's :=                                     %the argument is written into s
-  output.state mid.sentence =
-    { ", " * write$ }
-    %{ " " * write$ }
-    %mid.sentence first write comma
-    { output.state after.block =
-        { add.period$ write$ newline$ }
-        { output.state before.all = 'write$
-            { add.period$ " " * write$ }
-          if$}
-      if$
-      mid.sentence 'output.state := }
-  if$
-  s                                         %now comes s
-}
-
 FUNCTION {output.nonnull.dash}
 { 's :=                                   %the argument is written into s
   output.state mid.sentence =
@@ -159,14 +137,6 @@ FUNCTION {output}     %does nothing or calls output.nonull
     'output.nonnull
   if$
 }
-
-FUNCTION {output.comma}     %does nothing or calls output.nonull
-{ duplicate$ empty$
-    'pop$
-    'output.nonnull.comma
-  if$
-}
-
 FUNCTION {output.dash}     %does nothing or calls output.nonull
 { duplicate$ empty$
     'pop$
@@ -299,9 +269,9 @@ FUNCTION {bbl.missing.year}
  if$}
 FUNCTION {bbl.monography} { "Monografia" }
 FUNCTION {bbl.mthesis} { "Disserta\c{c}\~{a}o" }
-FUNCTION {bbl.no.address} {"[\textit{S.l.}]"}
-FUNCTION {bbl.no.address.no.publisher} {"[\textit{S.l.}: \textit{s.n.}]"}
-FUNCTION {bbl.no.publisher} {"[\textit{s.n.}]"}
+FUNCTION {bbl.no.address} {"[S.l.]"}
+FUNCTION {bbl.no.address.no.publisher} {"[S.l.: s.n.]"}
+FUNCTION {bbl.no.publisher} {"[s.n.]"}
 FUNCTION {bbl.number} { iso.abbreviation {"no."} {"n."} if$ }
 FUNCTION {bbl.nr} { "n." }
 FUNCTION {bbl.of} { "de" }
@@ -773,9 +743,7 @@ FUNCTION {n.dashify}
   while$
 }
 
-% Luiz - In em itálico
-%FUNCTION {word.in} { bbl.in " " * }
-FUNCTION {word.in} {"\textit{In}: "}
+FUNCTION {word.in} { bbl.in " " * }
 
 FUNCTION {format.month}
 { month empty$ 'skip$
@@ -822,17 +790,6 @@ FUNCTION {format.volume} %leaves formatted or empty volume on the stack
  if$
 }
 
-FUNCTION {format.volume.semprefix} %leaves formatted or empty volume on the stack
-{volume duplicate$ empty$
-   'skip$
-   {volume #1 #1 substring$ is.num
-      {tie.or.space.prefix * }
-      'skip$
-    if$}
- if$
-}
-
-
 FUNCTION {format.number} %leaves formatted or empty number on the stack
 { number duplicate$ empty$
     'skip$
@@ -847,21 +804,7 @@ FUNCTION {format.patent.number}
 FUNCTION {format.bvolume}
 { volume empty$
     { "" }
-    { format.volume.semprefix
-      number empty$ 'skip$ {output format.number} if$
-      series "series" bibinfo.check
-      duplicate$ empty$ 'pop$
-        { swap$ bbl.of space.word * swap$
-          emphasize * }
-      if$
-    }
-  if$
-}
-
-FUNCTION {format.bvolume.noword}
-{ volume empty$
-    { "" }
-    { format.volume.semprefix
+    { format.volume
       number empty$ 'skip$ {output format.number} if$
       series "series" bibinfo.check
       duplicate$ empty$ 'pop$
@@ -1100,18 +1043,6 @@ FUNCTION {format.booktitle}
     apply.title.command} if$}
 if$
 }
-
-FUNCTION {format.booktitle.inproceedings}
-{author empty$ editor empty$ and organization empty$ and
-    {booktitle "booktitle" bibinfo.check "u" change.case$ duplicate$ empty$ 'skip$ {} if$
-    booksubtitle  empty$ 'skip$ {booksubtitle ": " swap$ * "t" change.case$ *
-    apply.title.command} if$}
-    {booktitle "booktitle" bibinfo.check "u" change.case$ duplicate$ empty$ 'skip$ {} if$
-    booksubtitle  empty$ 'skip$ {booksubtitle ": " swap$ * "t" change.case$ *
-    apply.title.command} if$}
-if$
-}
-
 FUNCTION {format.editors}
 { editor  empty$
    {"inbook" type$ = 'bbl.same.field 'skip$ if$}
@@ -1136,7 +1067,7 @@ FUNCTION {format.in.ed.booktitle}
        booktitle empty$ {""} {new.sentence format.booktitle} if$}
       {word.in
        organization empty$ author empty$ and 'skip$
-         {"inbook" type$ = {output ""}
+         {"inbook" type$ = {bbl.same.field * output new.sentence ""}
          'skip$ if$  } if$
        booktitle empty$ 'skip$ {format.booktitle *} if$}
      if$}
@@ -1146,26 +1077,6 @@ FUNCTION {format.in.ed.booktitle}
   output
   new.sentence
 }
-
-FUNCTION {format.in.ed.booktitle.inproceedings}
-{ editor empty$
-    {organization empty$ not author empty$ not and    %if one of two not empty
-      {word.in organization "u" change.case$ * output
-       format.conference.info
-       booktitle empty$ {""} {new.sentence format.booktitle.inproceedings} if$}
-      {word.in
-       organization empty$ author empty$ and 'skip$
-         {"inbook" type$ = {output ""}
-         'skip$ if$  } if$
-       booktitle empty$ 'skip$ {format.booktitle.inproceedings *} if$}
-     if$}
-    {word.in format.editors * output
-     booktitle empty$ {""} {new.sentence format.booktitle.inproceedings} if$}
-  if$
-  output
-  new.sentence
-}
-
 FUNCTION {empty.misc.check}
 { author empty$ title empty$ howpublished empty$
   month empty$ year empty$ note empty$
@@ -1220,13 +1131,6 @@ FUNCTION {format.address}
 {address empty$
   { bbl.no.address}
   { address}
- if$
-}
-
-FUNCTION {format.address.manual}
-{address empty$
-  { bbl.no.address}
-  { address ": " *}
  if$
 }
 
@@ -1351,7 +1255,7 @@ FUNCTION {format.names.for.label2} %abnt-alf only
        {s nameptr "{ll}" format.name$ #1 "{ll}" format.name$
         s nameptr "{ jj}" format.name$ *}
      if$
-     abnt.cite.style #0 = {"t" change.case$} 'skip$ if$ 't :=
+     abnt.cite.style #0 = {"u" change.case$} 'skip$ if$ 't :=
       nameptr #1 >
         {namesleft #1 >
             { numnames abnt.etal.cite > 
@@ -1733,7 +1637,7 @@ FUNCTION {article}
   format.author.or.organization  new.sentence
   iso.year.label
   format.title "title" output.check new.block
-  format.journal output ", " * write
+  format.journal output
   iso.date.place {format.year output} 'skip$ if$
   %iso.date.place {format.date output} 'skip$ if$
   %iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
@@ -1741,10 +1645,10 @@ FUNCTION {article}
   section "section" bibinfo.check output.dash
   publisher "publisher" bibinfo.check output
   address "address" bibinfo.check output
-  format.volume output "," * write
-  format.number output "," * write
-  format.pages output "," * write
-  non.iso.date 
+  format.volume output
+  format.number output
+  format.pages output
+  non.iso.date
   format.issn output new.block
   format.note output new.block
   format.url
@@ -1759,7 +1663,6 @@ FUNCTION {book}
   format.furtherresp new.sentence
   format.edition output new.sentence
   format.publisher.address output
-  ", " * write
   iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
                  {format.year output new.sentence} if$
   format.volume output new.sentence
@@ -1802,19 +1705,17 @@ FUNCTION {inbook}
 { output.bibitem
   format.author.or.organization new.sentence
   iso.year.label
-  format.title "title" output.check new.sentence
+  format.title "title" output.check new.block
   format.in.ed.booktitle
-  %"In: " * write 
-  %booktitle output
   format.furtherresp new.sentence
   format.edition output new.sentence
-  format.publisher.address output ", " * write
+  format.publisher.address output
   %format.year output new.sentence
   iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
                  {format.year output new.sentence} if$
-  format.chapter.pages output new.sentence
   format.bvolume.if.no.series output
   format.volume.number.series output
+  format.chapter.pages output new.sentence
   format.isbn output new.block
   format.note output new.block
   format.url
@@ -1845,25 +1746,13 @@ FUNCTION {inproceedings}
   format.author.or.organization new.sentence
   iso.year.label
   format.title "title" output.check  new.sentence
-  %". " * write
-  %format.bvolume.if.no.series output
-  %format.volume.number.series output
-  %"In:" * write
-  %booktitle output
-  %volume output ".," * write
-  format.in.ed.booktitle.inproceedings
-  format.bvolume.noword output
-  "." * write
-  %iso.date.place {abnt.alf 'skip$ {format.year output.comma new.sentence} if$}
-  %               {format.year output.comma} if$
-  format.year output.comma 
-  address output.comma
-  ". " * write
-  "\textbf{Anais [...]}" * write
+  format.in.ed.booktitle
   format.publisher.address output
   %format.year output new.sentence
   iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
-                 {format.year output.comma new.sentence} if$
+                 {format.year output new.sentence} if$
+  format.bvolume.if.no.series output
+  format.volume.number.series output
   format.pages output
   format.isbn output
   format.issn output new.sentence
@@ -1902,13 +1791,10 @@ FUNCTION {manual}
   format.btitle "title" output.check new.block
   format.furtherresp new.sentence
   format.edition output new.sentence
-  format.address.manual output 
-  org-short output 
-  ", " * write % Adiciona o campo org-short, se existir
-  iso.date.place 
-    { abnt.alf 'skip$ { format.year output } if$ }
-    { format.year output } if$
-  new.sentence
+  format.address output
+  %format.date output new.sentence
+  iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
+                 {format.year output new.sentence} if$
   format.bvolume.if.no.series output
   format.book.pages output new.sentence
   format.volume.number.series output new.sentence
@@ -1924,10 +1810,7 @@ FUNCTION {misc}
   format.type output
   format.btitle output new.sentence
   format.furtherresp new.sentence
-  format.address output ": " * write
-  %format.publisher.address.relax output 
-  %addres output
-  org-short output ", " * write
+  format.publisher.address.relax output
   %format.date output  new.block
   iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
                  {format.year output new.sentence} if$
@@ -2133,7 +2016,7 @@ if$
 FUNCTION {presort}
 { 
  any.sort
-  "    " * title field.or.null * "    " * year field.or.null sortify
+  "    " * year field.or.null sortify * "    " * title field.or.null
   sort.format.title * #1 entry.max$ substring$
   %for non-alpha style we drop a void sort.key such that SORT has no effect
   abnt.alf 'skip$ {pop$ ""} if$ 'sort.key$ :=

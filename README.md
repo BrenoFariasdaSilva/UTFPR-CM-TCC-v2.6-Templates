@@ -8,7 +8,7 @@
   
 ---
 
-Project-Description.
+Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Portuguese and English with Docker or local compilation on Windows, macOS, and Linux. Includes dependency setup, bibliography processing, acronym lists, PDF generation, and full build logs.
   
 ---
 

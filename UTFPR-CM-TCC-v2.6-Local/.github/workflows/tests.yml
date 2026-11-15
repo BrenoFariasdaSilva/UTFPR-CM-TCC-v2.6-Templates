@@ -1,0 +1,32 @@
+name: Cross-platform bootstrap tests
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - 'Makefile'
+      - 'build-config.json'
+      - '.github/workflows/tests.yml'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  unit-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify Python source and platform-independent tests
+        run: |
+          python -m compileall -q scripts tests
+          python -m unittest discover -s tests -v
+      - name: Check Linux/macOS launcher syntax
+        if: runner.os != 'Windows'
+        run: |
+          bash -n Start-Here-macOS.command
+          bash -n Start-Here-Linux.sh

@@ -1,0 +1,7 @@
+{
+  "template": "UTFPR-CM-TCC-v2.6",
+  "language": "pt-BR",
+  "mode": "native",
+  "docker_image": "texlive/texlive:latest",
+  "main": "main.tex"
+}

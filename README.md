@@ -43,7 +43,7 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
   - [Requirements](#requirements)
   - [Setup](#setup)
     - [Clone the repository](#clone-the-repository)
-  - [Installation:](#installation)
+  - [Installation](#installation)
   - [Usage](#usage)
   - [How to Cite?](#how-to-cite)
   - [Contributing](#contributing)
@@ -85,7 +85,7 @@ Download the repository using **Code → Download ZIP** on GitHub and extract it
    cd UTFPR-CM-TCC-v2.6-Templates
    ```
 
-## Installation:
+## Installation
 
 1. **For beginners:** open the repository folder and launch the script for your operating system. It presents the four template choices and delegates setup and compilation to the selected project:
 

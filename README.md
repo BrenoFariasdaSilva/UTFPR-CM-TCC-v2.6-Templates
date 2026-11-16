@@ -16,6 +16,7 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
 
 <div align="center">
 
+[![Monorepo CI](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/actions/workflows/monorepo-tests.yml/badge.svg?branch=main)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/actions/workflows/monorepo-tests.yml)
 ![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
 ![GitHub Commits](https://img.shields.io/github/commit-activity/t/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/main)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)

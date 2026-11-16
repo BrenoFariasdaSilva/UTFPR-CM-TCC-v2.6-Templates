@@ -26,7 +26,7 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
 ![GitHub Stars](https://img.shields.io/github/stars/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
 ![GitHub Contributors](https://img.shields.io/github/contributors/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
 ![GitHub Created At](https://img.shields.io/github/created-at/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
-![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates.svg)
+![wakatime](https://wakatime.com/badge/user/28f6c354-43b3-4634-8ec1-631893fe27d0/project/83c90854-443c-4852-a8ef-7f9368769553.svg)
 [![Open Issues](https://img.shields.io/github/issues/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/issues?q=is%3Aissue+is%3Aclosed)
 [![Open Pull Requests](https://img.shields.io/github/issues-pr/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/pulls)

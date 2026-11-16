@@ -31,10 +31,33 @@ Four automated LaTeX TCC v2.6 templates for UTFPR Campo Mourão, available in Po
 </div>
 
 <div align="center">
-  
-![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/e1194b1207a4250b450f4c82aa87ff003f24b902.svg "Repobeats analytics image")
+
+![Monorepo CI](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/actions/workflows/monorepo-tests.yml/badge.svg?branch=main)
+![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Commits](https://img.shields.io/github/commit-activity/t/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/main)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Forks](https://img.shields.io/github/forks/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Language Count](https://img.shields.io/github/languages/count/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub License](https://img.shields.io/github/license/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Stars](https://img.shields.io/github/stars/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Contributors](https://img.shields.io/github/contributors/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![GitHub Created At](https://img.shields.io/github/created-at/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates.svg)
+[![GitHub Repository Size](https://img.shields.io/github/repo-size/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)
+[![Open Issues](https://img.shields.io/github/issues/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/issues)
+[![Closed Issues](https://img.shields.io/github/issues-closed/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/issues?q=is%3Aissue+is%3Aclosed)
+[![Open Pull Requests](https://img.shields.io/github/issues-pr/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/pulls)
+[![Closed Pull Requests](https://img.shields.io/github/issues-pr-closed/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/pulls?q=is%3Apr+is%3Aclosed)
+[![Monthly Commits](https://img.shields.io/github/commit-activity/m/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/main)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/commits)
+[![Merged PRs](https://img.shields.io/github/issues-search/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates?query=is%3Apr%20is%3Amerged&label=merged%20PRs&color=blue)](https://github.com/BrenoFariasdaSilva/UTFPR-CM-TCC-v2.6-Templates/pulls?q=is%3Apr+is%3Amerged)
+![Typesetting](https://img.shields.io/badge/Typesetting-LaTeX-008080)
+![Build](https://img.shields.io/badge/Build-Docker%20or%20Local-2496ed)
+![Platforms](https://img.shields.io/badge/Platforms-Windows%20Linux%20macOS-64748b)
+
+![Repobeats Statistics](https://repobeats.axiom.co/api/embed/e1194b1207a4250b450f4c82aa87ff003f24b902.svg)
 
 </div>
+
 
 ## Table of Contents
 - [UTFPR-CM-TCC-v2.6-Templates. ](#utfpr-cm-tcc-v26-templates-)

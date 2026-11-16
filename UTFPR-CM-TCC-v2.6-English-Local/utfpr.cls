@@ -1357,9 +1357,9 @@
   \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
     \section*{}%% Seção notações
     \normalsize
-    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+    \begin{longtable}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente longtable
 }{%%
-    \end{xtabular}
+    \end{longtable}
   \end{Spacing}
   \vspace*{0pt}%% Espaçamento vertical
 }
